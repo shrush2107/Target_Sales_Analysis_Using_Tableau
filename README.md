@@ -4,7 +4,7 @@ This project showcases **interactive Tableau dashboards** built using **syntheti
 
 The goal was to learn and apply **core to advanced Tableau skills** across KPI visualization, interactivity, and storytelling for business decision-making.
 
----
+
 
 ## 📸 Dashboard Previews
 
@@ -15,8 +15,6 @@ The goal was to learn and apply **core to advanced Tableau skills** across KPI v
 
 ### 👥 Customer Dashboard
 ![image](https://github.com/user-attachments/assets/98bc2900-5d70-4884-a9f6-a9030f2f1685)
-
-
 
 ---
 
@@ -59,6 +57,53 @@ This project helped me gain hands-on experience with a wide range of Tableau fea
 
 ---
 
+## KPIs & Metrics
+
+### 🛒 Sales Dashboard
+
+#### 🔹 Performance KPIs
+- **Total Sales**   
+- **Sales Growth vs PY**  
+- **Total Profit**  
+- **Profit Growth vs PY**  
+- **Total Quantity Sold** 
+- **Quantity Growth vs PY**  
+
+#### 🔹 Product-Level Metrics
+- **Sales by Sub-Category:** Ranked by sales volume across product types  
+- **Profit/Loss by Sub-Category:** Profitability segmented by product lines  
+- **Top-Performing vs Underperforming Products:** Based on profit contribution  
+
+#### 🔹 Time-Based Metrics
+- **Sales Over Time (Monthly/Weekly):** Line chart with average sales benchmark  
+- **Profit Over Time:** Line chart with average profit benchmark  
+- **Above/Below Average Periods:** Highlighted to show trends  
+
+#### 🔹 Geographic Insights
+- **Quantity Sold by State:** Interactive map view  
+- **Quantity Distribution by Region:** Donut chart showing regional breakdown  
+
+
+### 👥 Customer Dashboard
+
+#### 🔹 Customer-Level KPIs
+- **Total Customers**   
+- **Customer Growth vs PY**   
+- **Average Sales per Customer** 
+- **Growth in Sales per Customer vs PY** 
+- **Total Orders**  
+- **Order Growth vs PY** 
+
+#### 🔹 Customer Performance Metrics
+- **Top 10 Customers by Profit:** Ranked list with profit, sales, and order count  
+- **Customer Lifetime Sales & Profit:** Year-to-date values  
+- **Distinct Orders by Customer:** Shows repeat behavior  
+
+#### 🔹 Behavioral Segmentation
+- **Customer Distribution by Order Frequency:** Histogram (e.g., 1-time vs repeat buyers)
+
+---
+
 ## 📈 Key Features
 
 | Feature                      | Description |
@@ -78,17 +123,9 @@ This project helped me gain hands-on experience with a wide range of Tableau fea
 ## 🧪 Data Summary
 
 - Data is **completely synthetic**, designed to replicate common retail patterns (sales, orders, customers, product lines).
-- Contains fields for:
-  - Order ID, Date, Customer, Product Category/Subcategory
-  - Sales, Quantity, Profit
-  - Customer ID, State, Region
 
----
+![image](https://github.com/user-attachments/assets/4c268ae4-27ab-4b5b-ad06-4621ad5da71c)
 
-
-## 📚 Resources Used
-
-- Tableau Desktop
 
 ---
 
