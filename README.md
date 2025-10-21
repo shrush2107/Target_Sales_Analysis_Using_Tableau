@@ -1,4 +1,4 @@
-# 🧮 Target Retail Analytics Pipeline (Airflow · Databricks · Tableau) - 2020 to 2023  
+# 🧮 Target Retail Analytics Pipeline (Airflow · Databricks · Tableau)
 
 This project demonstrates an **end-to-end automated data analytics pipeline** orchestrated using **Apache Airflow**, powered by **Databricks SQL** transformations, and visualized with **Tableau**.  
 
