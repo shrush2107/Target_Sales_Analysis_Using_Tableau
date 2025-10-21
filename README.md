@@ -1,155 +1,132 @@
-# 🧮 Target Retail Analytics Dashboard (Tableau) – 2020 to 2023
+# 🧮 Target Retail Analytics Pipeline (Airflow · Databricks · Tableau) — 2020 to 2023  
 
-This project showcases **interactive Tableau dashboards** built using **synthetic retail data** adapted to resemble Target's business model. The dashboards are designed to explore customer behavior, sales trends, and geographic performance from **2020 to 2023**.
+This project demonstrates an **end-to-end automated data analytics pipeline** orchestrated using **Apache Airflow**, powered by **Databricks SQL** transformations, and visualized with **Tableau**.  
 
-The goal was to learn and apply **core to advanced Tableau skills** across KPI visualization, interactivity, and storytelling for business decision-making.
-
-
-
-## 📸 Dashboard Previews
-
-### 💰 Sales Dashboard
-![image](https://github.com/user-attachments/assets/55391065-dee6-4c87-9bdf-6658cbd7869a)
-![image](https://github.com/user-attachments/assets/79761a86-9f86-498f-9517-72f8814fcfb7)
-
-
-### 👥 Customer Dashboard
-![image](https://github.com/user-attachments/assets/98bc2900-5d70-4884-a9f6-a9030f2f1685)
+Inspired by **Target’s retail operations**, this project analyzes **synthetic sales, product, and customer data** from **2020 to 2023**.  
+The pipeline automates data ingestion, transformation, and dashboard refresh to produce actionable insights on performance, customer trends, and geographic behavior.  
 
 ---
 
-## 🧠 What I Learned in Tableau
+## 🧭 Project Overview  
 
-This project helped me gain hands-on experience with a wide range of Tableau features:
+**🎯 Objective:**  
+Build an automated and scalable analytics pipeline to demonstrate the integration of modern data tools — from ingestion to visualization — for retail performance monitoring.
 
-### 🔌 Data Connection & Prep
-- Connected Tableau to an **Excel workbook** with multiple tables (Orders, Customers, Products).
-- Performed data cleaning and **joined tables** using relationships and custom joins.
-- Ensured **date consistency** to enable time-based filtering across 2020–2023.
-
-### 🧮 Calculated Fields
-- Created **custom KPIs**: Profit per Customer, Sales per Order, YoY Growth.
-- Defined **logical buckets** for customer frequency (e.g., orders = 1, 2, 3...).
-- Calculated **average lines** (e.g., average weekly sales/profit).
-
-### 🎛️ Filters
-- Added **global filters** for:
-  - Year (2020 to 2023)
-  - Product Subcategory
-  - State/Region
-- Used **context filters** to drive responsive tooltips and charts.
-
-### 🧪 Parameters
-- Implemented **parameter-driven navigation** to switch between:
-  - Sales Dashboard
-  - Customer Dashboard
-- Parameter selection automatically changes views while maintaining filters.
-
-### 📊 Visualization Techniques
-- Dual-axis line charts to show **current vs previous year trends**.
-- Highlighted **Top 10 customers** based on dynamic current year profit.
-- Added **sales distribution by state** and **donut chart for regional splits**.
-- Built a **sub-category breakdown** showing 2023 vs 2022 comparisons with profit/loss bars.
-
-### 🧰 Tooltip Design
-- Customized tooltips to display additional dimensions (e.g., Order Date, Sales, Profit).
-- Used **bar chart tooltips** for comparative context in time-series plots.
+**🚀 Outcomes:**  
+- Automated ingestion and cleaning of retail data using Python  
+- Transformations and KPI computation in Databricks (SQL + PySpark)  
+- Workflow orchestration with Apache Airflow DAGs  
+- Interactive Tableau dashboards for insights and storytelling  
 
 ---
 
-## KPIs & Metrics
-
-### 🛒 Sales Dashboard
-
-#### 🔹 Performance KPIs
-- **Total Sales**   
-- **Sales Growth vs PY**  
-- **Total Profit**  
-- **Profit Growth vs PY**  
-- **Total Quantity Sold** 
-- **Quantity Growth vs PY**  
-
-#### 🔹 Product-Level Metrics
-- **Sales by Sub-Category:** Ranked by sales volume across product types  
-- **Profit/Loss by Sub-Category:** Profitability segmented by product lines  
-- **Top-Performing vs Underperforming Products:** Based on profit contribution  
-
-#### 🔹 Time-Based Metrics
-- **Sales Over Time (Monthly/Weekly):** Line chart with average sales benchmark  
-- **Profit Over Time:** Line chart with average profit benchmark  
-- **Above/Below Average Periods:** Highlighted to show trends  
-
-#### 🔹 Geographic Insights
-- **Quantity Sold by State:** Interactive map view  
-- **Quantity Distribution by Region:** Donut chart showing regional breakdown  
+## ⚙️ Architecture  
+```mermaid
+flowchart TD
+    A[Python EL Script] --> B[Databricks Transformation]
+    B --> C[Delta Lake Storage]
+    C --> D[Tableau Dashboard]
+    E[Apache Airflow DAG] --> A
+    E --> B
+    E --> D
+```
 
 
-### 👥 Customer Dashboard
+### 🧩 Tools & Technologies  
 
-#### 🔹 Customer-Level KPIs
-- **Total Customers**   
-- **Customer Growth vs PY**   
-- **Average Sales per Customer** 
-- **Growth in Sales per Customer vs PY** 
-- **Total Orders**  
-- **Order Growth vs PY** 
-
-#### 🔹 Customer Performance Metrics
-- **Top 10 Customers by Profit:** Ranked list with profit, sales, and order count  
-- **Customer Lifetime Sales & Profit:** Year-to-date values  
-- **Distinct Orders by Customer:** Shows repeat behavior  
-
-#### 🔹 Behavioral Segmentation
-- **Customer Distribution by Order Frequency:** Histogram (e.g., 1-time vs repeat buyers)
+| Layer | Tool | Description |
+|-------|------|-------------|
+| **Extraction & Loading (EL)** | 🐍 **Python (pandas, requests)** | Automate ingestion of synthetic CSV data to Databricks |
+| **Transformation (T)** | 🔥 **Databricks SQL / PySpark** | Perform data modeling, joins, and KPI aggregations |
+| **Storage** | 💾 **Delta Lake** | Store incremental and versioned analytical tables |
+| **Orchestration** | 🪶 **Apache Airflow** | Manage task dependencies, scheduling, and monitoring |
+| **Visualization** | 📊 **Tableau** | Build interactive dashboards with KPIs and filters |
 
 ---
 
-## 📈 Key Features
+## 🪜 Pipeline Workflow  
 
-| Feature                      | Description |
-|-----------------------------|-------------|
-| 📊 Dual-Axis KPIs           | Compare metrics across years with trendlines |
-| 🧍 Customer Segmentation     | Frequency distribution by number of orders |
-| 🔁 Dashboard Navigation     | Parameterized toggle between Customer and Sales dashboards |
-| 🧩 Subcategory Insights     | Compare 2022 vs 2023 performance with clear loss/profit encoding |
-| 🗺️ Geo Visualization        | State-wise sales density using map |
-| 🎯 Top Customer Table       | Ranked customers with drilldown capability |
-| 🔎 Tooltips + Highlighting  | Enhanced user experience with contextual info |
-| 📅 Time Period              | Full coverage of **2020 to 2023**, filterable |
-| 📥 State & Region Filters   | Dynamic charts that respond to geography selections |
+1. **Python EL Task**  
+   - Reads raw data (sales, customers, products) from local or cloud sources  
+   - Cleans, validates, and uploads data to Databricks staging tables  
 
----
+2. **Databricks Transformation Task**  
+   - Executes SQL scripts for cleaning, enrichment, and KPI computation  
+   - Creates aggregated analytical tables optimized for Tableau  
 
-## 🧪 Data Summary
+3. **Tableau Refresh Task**  
+   - Connects Tableau to Databricks output tables  
+   - Refreshes extracts or live connections for up-to-date visuals  
 
-- Data is **completely synthetic**, designed to replicate common retail patterns (sales, orders, customers, product lines).
-
-![image](https://github.com/user-attachments/assets/4c268ae4-27ab-4b5b-ad06-4621ad5da71c)
-
+4. **Airflow DAG**  
+   - Orchestrates all steps in sequence  
+   - Includes retry logic, failure alerts, and daily scheduling  
 
 ---
 
-## 📝 Disclaimer
+## 📊 Dashboard Overview  
 
-This is a **portfolio project** created for learning purposes. All data is **synthetic** and not affiliated with Target Corporation.
+### 💰 Sales Dashboard  
+Focuses on sales trends, profitability, and product-level performance.  
+Includes KPIs for Total Sales, Profit, YoY Growth, and Category Rankings.
+
+### 👥 Customer Dashboard  
+Analyzes customer behavior, purchase frequency, and lifetime value.  
+Highlights top-performing customers and repeat purchase patterns.
+
+📸 *Dashboard Previews:*  
+![Sales Dashboard](https://github.com/user-attachments/assets/55391065-dee6-4c87-9bdf-6658cbd7869a)  
+![Customer Dashboard](https://github.com/user-attachments/assets/98bc2900-5d70-4884-a9f6-a9030f2f1685)
+
+---
+
+## 🧮 KPIs & Metrics  
+
+| Category | Metrics |
+|-----------|----------|
+| **Performance** | Total Sales, Sales Growth vs PY, Profit Margin, Quantity Sold |
+| **Product-Level** | Sales by Category, Profit/Loss by Product Line, Top & Bottom SKUs |
+| **Customer** | Total Customers, Avg Sales per Customer, Order Frequency |
+| **Geographic** | Sales by State, Regional Profit Share, Sales Density Maps |
+
+---
+
+## 🧠 Key Learnings  
+
+- Built and automated an **ETL pipeline** with **Apache Airflow DAGs**  
+- Used **Databricks SQL** and **PySpark** for scalable transformations  
+- Implemented **incremental data loads** using **Delta Lake**  
+- Created **interactive Tableau dashboards** for business storytelling  
+- Understood **workflow orchestration, scheduling, and dependency management**
+
+---
 
 
+## 📈 Results  
 
+- Automated daily refresh of sales and customer data  
+- Eliminated manual Tableau updates via Airflow orchestration  
+- Delivered an **executive-ready dashboard** summarizing key business KPIs  
+- Demonstrated **integration of engineering + analytics + visualization**
 
+---
 
+## 📝 Disclaimer  
 
+This is an **academic and portfolio project** developed for learning purposes.  
+All data is **synthetic** and not affiliated with **Target Corporation**.
 
+**🔗 Live Dashboard:**  
+👉 [View on Tableau Public](https://public.tableau.com/app/profile/shrushti.agarwal/viz/TargetStoreDashboard/SalesDashboard)
 
+---
 
+## 💡 Future Enhancements  
 
+- Integrate **forecasting models** (e.g., ARIMA, Prophet) in Databricks  
+- Containerize pipeline using **Docker** and deploy via **Airflow on Cloud Composer**
 
+---
 
-
-
-
-
-
-
-
-
-Live on: https://public.tableau.com/app/profile/shrushti.agarwal/viz/TargetStoreDashboard/SalesDashboard
+👩‍💻 **Author:** *Shrushti Agarwal*  
+📫 **Contact:** [LinkedIn](https://www.linkedin.com/in/shrushti-agarwal) · [GitHub](https://github.com/)
